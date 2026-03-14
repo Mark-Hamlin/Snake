@@ -1,0 +1,3 @@
+#Screen Constants
+SCREEN_WIDTH = 1920
+SCREEN_HEIGTH = 1080
