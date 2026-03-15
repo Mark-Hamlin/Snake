@@ -13,8 +13,8 @@ def main():
     x_value = SCREEN_WIDTH//2
     y_value = SCREEN_HEIGTH/2
     #Snake Values
-    apple_x_value = random.randint(0,1000)
-    apple_y_value = random.randint(0,650)
+    apple_x_value = random.randint(0,750)
+    apple_y_value = random.randint(0,750)
     while running: 
         for event in pygame.event.get():
             if event.type == pygame.QUIT: running = False
@@ -26,13 +26,25 @@ def main():
         apple.draw(screen)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
-            y_value -= 5
+            if y_value <= 0:
+                y_value = 0 
+            else:
+                y_value -= 5
         if keys[pygame.K_s]:
-            y_value += 5
+            if y_value >= SCREEN_HEIGTH - 50:
+                y_value = SCREEN_HEIGTH - 50 
+            else:
+                y_value += 5 
         if keys[pygame.K_a]:
-            x_value -= 5
+            if x_value <= 0:
+                x_value = 0 
+            else:
+                x_value -= 5
         if keys[pygame.K_d]:
-            x_value += 5
+            if x_value >= SCREEN_WIDTH - 50:
+                x_value = SCREEN_WIDTH - 50
+            else:
+                x_value += 5 
         pygame.display.flip()
         clock.tick(60)
     pygame.quit()
