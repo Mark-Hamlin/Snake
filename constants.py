@@ -1,3 +1,8 @@
 #Screen Constants
 SCREEN_WIDTH = 1920
 SCREEN_HEIGTH = 1080
+
+#Apple Constants
+APPLE_WIDTH = 50
+APPLE_HEIGHT = 50
+

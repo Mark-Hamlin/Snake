@@ -9,4 +9,3 @@ class Snake:
         self.y = y
     def draw(self,screen):
         pygame.draw.rect(screen,self.color,(self.x,self.y,self.height,self.width))
-        
