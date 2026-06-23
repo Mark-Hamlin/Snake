@@ -1,8 +1,9 @@
 import pygame
+from constants import *
 from Snake import *
 from Food import *
 pygame.init()
-screen = pygame.display.set_mode((1280,720))
+screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 clock = pygame.time.Clock()
 snake = Snake()
 food = Food()
@@ -19,16 +20,13 @@ while running:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w] and snake.direction != "down":
         snake.direction = "up"
-        snake.move(dt)
     if keys[pygame.K_s] and snake.direction != "up":
         snake.direction = "down"
-        snake.move(dt)
     if keys[pygame.K_a] and snake.direction != "right":
         snake.direction = "left"
-        snake.move(dt)
     if keys[pygame.K_d] and snake.direction != "left":
         snake.direction = "right"
-        snake.move(dt)
+    snake.move(dt)
 
     pygame.display.flip()
     dt = clock.tick(60) / 100

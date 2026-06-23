@@ -9,12 +9,20 @@ class Snake():
         pygame.draw.rect(screen,"red",(self.x,self.y,10,10))
     def move_up(self,dt):
         self.y -= 10 * dt
+        if self.y <= 0:
+            self.y = 0
     def move_down(self,dt):
-        self.y += 10 * dt 
+        self.y += 10 * dt
+        if self.y >= 1270:
+            self.y = 0 
     def move_left(self,dt):
         self.x -= 10 * dt
+        if self.x <= 0:
+            self.x = 0
     def move_right(self,dt):
         self.x += 10 * dt
+        if self.x >= 1270:
+            self.x = 0
     def move(self,dt):
         if self.direction == "up":
             self.move_up(dt)
